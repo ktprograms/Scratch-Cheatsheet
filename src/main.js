@@ -137,13 +137,43 @@ if (!isEmailValid(email)) {
         document.querySelector('.nav__signinout').outerHTML = `<a class="nav__signinout btn btn-outline-primary" data-bs-target=".signin" href="?">${email}</button>`;
     } else {
         document.querySelector('.nav__signinout').outerHTML = `<a class="nav__signinout btn btn-outline-success" data-bs-target=".signin" href="?">${email}</button>`;
+
+        document.querySelectorAll('.accordion-header').forEach(function (questionContainer) {
+            const questionEl = questionContainer.querySelector('[data-show]');
+            if (!questionEl) {
+                return;
+            }
+
+            const key = questionEl.dataset.show;
+            const question = document.querySelector(`.question-text__${key}`);
+            if (!question) {
+                return;
+            }
+
+            questionEl.parentNode.replaceChild(question, questionEl);
+        });
+
         addEventListener('load', function () {
             document.querySelectorAll('.hint__show').forEach(function (hintEl) {
                 hintEl.dispatchEvent(new Event('click', { bubbles: true }));
             });
         });
-        document.querySelectorAll('.answer').forEach(function (answerEl) {
-            answerEl.removeAttribute('hidden');
+
+        document.querySelectorAll('.answer').forEach(function (answerContainer) {
+            answerContainer.removeAttribute('hidden');
+
+            const answerEl = answerContainer.querySelector('[data-show]');
+            if (!answerEl) {
+                return;
+            }
+
+            const key = answerEl.dataset.show;
+            const answer = document.querySelector(`.answer-text__${key}`);
+            if (!answer) {
+                return;
+            }
+
+            answerEl.parentNode.replaceChild(answer, answerEl);
         });
     }
 }
