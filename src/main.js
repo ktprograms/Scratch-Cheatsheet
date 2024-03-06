@@ -1,6 +1,6 @@
 //- MARK: Environment
 
-const CONFIG_DEBUG = true;
+const CONFIG_DEBUG = import.meta.env.DEV;
 
 const CONFIG_GITHUB_AUTH = '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';
 const CONFIG_GITHUB_REPO = {
