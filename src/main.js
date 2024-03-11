@@ -168,6 +168,8 @@ function isEmailUnprivileged(email) {
 const urlParams = new URLSearchParams(window.location.search);
 const email = urlParams.get('email');
 
+logKeyShown('signin', email);
+
 if (!isEmailValid(email)) {
     document.querySelector('.nav__signinout').outerHTML = '<button class="nav__signinout btn btn-primary" data-bs-target=".signin" data-bs-toggle="modal">Sign In</button>';
 } else {
