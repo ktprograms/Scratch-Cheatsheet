@@ -20,8 +20,17 @@ const CONFIG_UNPRIVILEGED_EMAIL = /^dc(?:24)?(?:[a-zA-Z0-9.])+@edu\.dignityforch
 
 import scratchblocks from 'scratchblocks';
 
+/**
+ * @param {HTMLElement} el
+ */
 function replace(el, svg, doc, options) {
     scratchblocks.replace(el, svg, doc, options);
+
+    // Preserve classes from .scratchblocks{,--inline} parent element
+    el.classList.forEach(function (className) {
+        el.firstElementChild.classList.add(className);
+    });
+    el.firstElementChild.id = el.id;
 
     // Remove .scratchblocks{,--inline} parent element
     el.parentNode.replaceChild(el.firstElementChild, el);
@@ -127,12 +136,24 @@ document.querySelectorAll('.accordion-header').forEach(function (questionContain
     }
 
     const key = questionEl.dataset.show;
-    const question = document.querySelector(`.question-text__${key}`);
+    const question = document.querySelector(`#question-text__${key}`);
     if (!question) {
         return;
     }
+    const questionClone = question.cloneNode(true);
 
-    questionEl.parentNode.replaceChild(question, questionEl);
+    questionEl.parentNode.replaceChild(questionClone, questionEl);
+});
+
+document.querySelectorAll('.param__show').forEach(function (paramEl) {
+    const key = paramEl.dataset.show;
+    const param = document.querySelector(`#param-text__${key}`);
+    if (!param) {
+        return;
+    }
+    const paramClone = param.cloneNode(true);
+
+    paramEl.parentNode.replaceChild(paramClone, paramEl);
 });
 
 //- MARK: Users
@@ -170,12 +191,13 @@ if (!isEmailValid(email)) {
             }
 
             const key = answerEl.dataset.show;
-            const answer = document.querySelector(`.answer-text__${key}`);
+            const answer = document.querySelector(`#answer-text__${key}`);
             if (!answer) {
                 return;
             }
+            const answerClone = answer.cloneNode(true);
 
-            answerEl.parentNode.replaceChild(answer, answerEl);
+            answerEl.parentNode.replaceChild(answerClone, answerEl);
         });
     }
 }
@@ -192,15 +214,16 @@ document.addEventListener('click', function (event) {
     }
 
     const key = event.target.dataset.show;
-    const hint = document.querySelector(`.hint-text__${key}`);
+    const hint = document.querySelector(`#hint-text__${key}`);
     if (!hint) {
         return;
     }
+    const hintClone = hint.cloneNode(true);
 
     if (isEmailUnprivileged(email)) {
         logKeyShown(email, key);
     }
 
-    event.target.parentNode.replaceChild(hint, event.target);
+    event.target.parentNode.replaceChild(hintClone, event.target);
     renderScratchblocks();
 });

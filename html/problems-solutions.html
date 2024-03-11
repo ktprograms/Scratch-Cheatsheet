@@ -1,16 +1,78 @@
-<!--TODO(Keith) Combine Q,A,TA into this file-->
 <div hidden>
-  <span class="question-text__reset-goto">Why is the sprite not going back to where I want it?</span>
-  <span class="question-text__reset-glide">Why is the <code class="scratchblocks--inline">glide () secs to x: () y: ()</code> block not making the sprite move?</span>
-</div>
-<div hidden>
-  <span class="hint-text__reset-goto__hint-1">Can sprites move by themselves?</span>
-  <span class="hint-text__reset-goto__hint-2">What block can make sprites go somewhere?</span>
+  <span id="question-text__reset-goto">Why is the sprite not going back to where I want it?</span>
+  <span id="hint-text__reset-goto__hint-1">Can sprites move by themselves?</span>
+  <span id="hint-text__reset-goto__hint-2">What block can make sprites go somewhere?</span>
+  <span id="hint-text__reset-goto__hint-3">What x/y position do you need to put in the <code class="scratchblocks--inline">go to x: () y: ()</code> block?</span>
+  <span id="hint-text__reset-goto__hint-4">When do the characters in a game/story/movie go to their starting positions? At the start, middle or end?</span>
+  <span id="answer-text__reset-goto__answer-1"><code class="scratchblocks--inline">go to x: () y:()</code> at the <strong>start</strong> (Just under the <code class="scratchblocks--inline">when green flag clicked</code> block)</span>
+  <span id="answer-text__reset-goto__answer-2"><em>TIP</em>: Drag the sprite to the desired position, then when taking a <code class="scratchblocks--inline">go to x: () y:()</code> block it will have the current coordinates</span>
 
-  <span class="hint-text__reset-glide__hint-1">Where is the <code class="scratchblocks--inline">glide () secs to x: () y: ()</code> block telling the sprite to go?</span>
-  <span class="hint-text__reset-glide__hint-2">Where is the sprite now?</span>
-</div>
-<div hidden>
-  <span class="answer-text__reset-goto__answer-1"><code class="scratchblocks--inline">go to x: () y:()</code> at the <strong>start</strong> (Just under the <code class="scratchblocks--inline">when green flag clicked</code> block)</span>
-  <span class="answer-text__reset-goto__answer-2"><em>TIP</em>: Drag the sprite to the desired position, then when taking a <code class="scratchblocks--inline">go to x: () y:()</code> block it will have the current coordinates</span>
+  <span id="question-text__reset-glide">Why is the <code class="scratchblocks--inline">glide () secs to x: () y: ()</code> block not making the sprite move?</span>
+  <span id="hint-text__reset-glide__hint-1">Where is the <code class="scratchblocks--inline">glide () secs to x: () y: ()</code> block telling the sprite to go?</span>
+  <span id="hint-text__reset-glide__hint-2">Where is the sprite now?</span>
+  <span id="hint-text__reset-glide__hint-3">Should the <code class="scratchblocks--inline">glide () secs to x: () y: ()</code> start from somewhere else?</span>
+  <span id="hint-text__reset-glide__hint-4">Where should the <code class="scratchblocks--inline">go to x: () y: ()</code> block be put? (See <em>Why is the sprite not going back to where I want it?</em>)</span>
+  <span id="answer-text__reset-glide__answer-1"><code class="scratchblocks--inline">glide () secs to x: () y:()</code> at the <strong>start</strong> (Just under the <code class="scratchblocks--inline">when green flag clicked</code> block)</span>
+  <span id="answer-text__reset-glide__answer-2"><em>TIP</em>: Drag the sprite to the desired position, then when taking a <code class="scratchblocks--inline">glide () secs to x: () y:()</code> block it will have the current coordinates</span>
+
+  <span id="question-text__broadcast">How do I make another sprite do something?</span>
+  <span id="hint-text__broadcast__hint">What blocks can you use to <strong>tell</strong> a sprite something?</span>
+  <span id="answer-text__broadcast__answer-1"><code class="scratchblocks--inline">broadcast (message1 v)</code> and <code class="scratchblocks--inline">when I receive (message1 v)</code></span>
+  <span id="answer-text__broadcast__answer-2"><code class="scratchblocks--inline">broadcast (message1 v)</code> from the sprite/stage that is <strong>sending</strong> the message. <code class="scratchblocks--inline">when I receive (message1 v)</code> in the sprite/stage that will <strong>receive</strong> the message</span>
+
+  <span id="question-text__clone">The copies aren't moving</span>
+  <span id="hint-text__clone__hint-1">Is the code running on the **copies** or the **original**?</span>
+
+  <span id="question-text__random-goto">How can I make something move to a different position each time?</span>
+  <span id="hint-text__random-goto__hint">Is there any block that does things <strong>randomly</strong>?</span>
+  <span id="answer-text__random-goto__answer"><code class="scratchblocks--inline">go to (random position v)</code></span>
+
+  <span id="question-text__random-number">How can I get a different number each time (for example, to move to a different position in only the x/y direction, or to turn a different amount)?</span>
+  <span id="hint-text__random-number__hint-1">Is there any block that gives you a <strong>random number</strong>?</span>
+  <span id="hint-text__random-number__hint-2">What numbers do you need to put in that block?</span>
+  <span id="answer-text__random-number__answer">The <code class="scratchblocks--inline">pick random () to ()</code> block provides a *random number* in the range between the left box and the right box, inclusive. This means that <code class="scratchblocks--inline">pick random (1) to (10)</code> could provide either 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10.</span>
+
+  <span id="question-text__looks-say">Why is the sprite running the code below (e.g. moving) while still talking?</span>
+  <span id="hint-text__looks-say__hint-1">Which <code class="scratchblocks--inline">say::looks</code> block are you using?</span>
+  <span id="hint-text__looks-say__hint-2">Do you want to use the <code class="scratchblocks--inline">say::looks</code> block that takes time to finish running?</span>
+  <span id="answer-text__looks-say__answer">The <code class="scratchblocks--inline">say []</code> block continues to the code below <strong>immediately</strong>. The <code class="scratchblocks--inline">say [] for () seconds</code> block keeps the speech bubble up for the specified number of seconds, during which time the code stays <strong>paused</strong> on the <code class="scratchblocks--inline">say [] for () seconds</code> block.</span>
+
+  <span id="question-text__looks-sayfor">Why is the sprite stuck talking instead of running the code below (e.g. dancing)?</span>
+  <span id="hint-text__looks-sayfor__hint">Which <code class="scratchblocks--inline">say::looks</code> block should you be using?</span>
+  <span id="answer-text__looks-sayfor__answer">The <code class="scratchblocks--inline">say [] for () seconds</code> block keeps the speech bubble up for the specified number of seconds, during which time the code stays <strong>paused</strong> on the <code class="scratchblocks--inline">say [] for () seconds</code> block. The <code class="scratchblocks--inline">say []</code> block continues to the code below <strong>immediately</strong>.</span>
+
+  <span id="question-text__sound-playuntil">Why is the sprite stuck playing the sound instead of running the code below (e.g. dancing)?</span>
+  <span id="hint-text__sound-playuntil__hint-1">Which sound block are you using?</span>
+  <span id="hint-text__sound-playuntil__hint-2">Do you want to use the sound block that takes time to finish running?</span>
+  <span id="answer-text__sound-playuntil__answer">The <code class="scratchblocks--inline">play sound ( v) until done</code> block plays the sound to completion, during which time the code stays <strong>paused</strong> on the <code class="scratchblocks--inline">play sound ( v) until done</code> block. The <code class="scratchblocks--inline">start sound ( v)</code> block continues to the code below <strong>immediately</strong>.</span>
+
+  <span id="question-text__sound-start">Why is the sprite running the code below (e.g. moving) while still playing the sound?</span>
+  <span id="hint-text__sound-start__hint">Which sound block should you be using?</span>
+  <span id="answer-text__sound-start__answer">The <code class="scratchblocks--inline">start sound ( v)</code> block continues to the code below <strong>immediately</strong>. The <code class="scratchblocks--inline">play sound ( v) until done</code> block plays the sound to completion, during which time the code stays <strong>paused</strong> on the <code class="scratchblocks--inline">play sound ( v) until done</code> block.</span>
+
+  <span id="hint-text__events-key-or-backdrop__hint">Where can you find blocks for <strong>when</strong> something happens?</span>
+  <span id="answer-text__events-key-or-backdrop__answer-1">The <code class="scratchblocks--inline">when::hat events</code> blocks can be found in the <strong>Events</strong> tab.</span>
+  <span id="question-text__events-key">How do I make something happen when a key is pressed (up/down/left/right key)?</span>
+  <span id="answer-text__events-key__answer-2">Use the <code class="scratchblocks--inline">when [up arrow v] key pressed</code> block</span>
+  <span id="question-text__events-backdrop">How do I make something happen when the project goes to a different background/story location?</span>
+  <span id="answer-text__events-backdrop__answer-2">Use the <code class="scratchblocks--inline">when backdrop switches to [backdrop1 v]</code> block</span>
+
+  <span id="question-text__sensing-color">The <code class="scratchblocks--inline">&lt;touching color [#0000FF]?&gt;</code> block isn't working?</span>
+  <span id="hint-text__sensing-color__hint-1">Is is it checking with the correct color?</span>
+  <span id="hint-text__sensing-color__hint-2">How can you select the correct color?</span>
+  <span id="answer-text__sensing-color__answer">By clicking on the colored oval (input), then clicking the "eyedropper" symbol, you can then click anywhere on the stage to use that exact color. `TODO(Keith): Add screenshot`</span>
+
+  <span id="question-text__operators-compare">How do I compare numbers or words?</span>
+  <span id="hint-text__operators-compare__hint">Are there any blocks that use the math symbols for comparing numbers?</span>
+  <span id="answer-text__operators-compare__answer">The <code class="scratchblocks--inline">&lt;() &gt; ()&gt;</code>, <code class="scratchblocks--inline">&lt;() &lt; ()&gt;</code>, and <code class="scratchblocks--inline">&lt;() = ()&gt;</code> blocks work as expected in maths.</span>
+
+  <span id="question-text__operators-lte-gte">How can I check if a number is "less than or equal to" or "greater than or equal to"?</span>
+  <span id="hint-text__operators-lte-gte__hint">Is there a block that lets you check if something <strong>or</strong> something else is true?</span>
+  <span id="answer-text__operators-lte-gte__answer">
+    Use the <code class="scratchblocks--inline">&lt;&lt;&gt; or &lt;&gt;&gt;</code> block, with a <code class="scratchblocks--inline">&lt;() &gt; ()&gt;</code> block on the left, and a <code class="scratchblocks--inline">&lt;() = ()&gt;</code> block on the right. This expresses the meaning of the ≥ expression in maths. For a ≤ expression, use a <code class="scratchblocks--inline">&lt;() &lt; ()&gt;</code> condition on the left side of the <code class="scratchblocks--inline">&lt;&lt;&gt; or &lt;&gt;&gt;</code> block.
+    <pre class="scratchblocks mt-3">
+&lt;&lt;(...) &gt; (50)&gt; or &lt;(...) = (50)&gt;&gt;
+&lt;&lt;(...) &lt; (50)&gt; or &lt;(...) = (50)&gt;&gt;
+    </pre>
+  </span>
 </div>

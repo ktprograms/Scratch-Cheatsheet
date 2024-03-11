@@ -1,0 +1,123 @@
+<div hidden>
+  <span id="question-text__racing">Racing game</span>
+  <li id="param-text__racing__param-1">Make a <strong>racing</strong> game, with two players (one can use the <strong>A</strong> key, and the other can use the <strong>L</strong> key)</li>
+  <li id="param-text__racing__param-2">Make sure the cars <strong>reset</strong> to the starting line when the game <strong>starts</strong></li>
+  <span id="hint-text__racing__hint-1">How do you <strong>reset</strong> the position?</span>
+  <span id="hint-text__racing__hint-2">Should both player’s cars be at the same place, or different places?</span>
+  <pre id="answer-text__racing__answer" class="scratchblocks">
+when green flag clicked
+go to x: (...) y: (...)
+
+when [a v] key pressed
+move (10) steps
+
+when [l v] key pressed
+move (10) steps
+  </pre>
+
+  <span id="question-text__breathe">Breathing</span>
+  <li id="param-text__breathe__param-1">Make the sprite “breathe” (getting bigger and smaller)</li>
+  <li id="param-text__breathe__param-2">Size should stay between 95 and 105</li>
+  <span id="hint-text__breathe__hint-1">Increase the size until it is more than 105</span>
+  <span id="hint-text__breathe__hint-2">Next, decrease the size until it is less than 95</span>
+  <span id="hint-text__breathe__hint-3">Last, make the first 2 steps repeat (forever?)</span>
+  <pre id="answer-text__breathe__answer" class="scratchblocks">
+when green flag clicked
+forever
+  repeat until &lt;(size) &gt; (105)&gt;
+    change size by (1)
+  end
+  repeat until &lt;(size) &lt; (95)&gt;
+    change size by (-1)
+  end
+end
+  </pre>
+
+  <span id="question-text__spiral">Spiral</span>
+  <li id="param-text__spiral__param-1">Using the Pen extension, draw a square</li>
+  <li id="param-text__spiral__param-2">Do it <strong>forever</strong></li>
+  <li id="param-text__spiral__param-3">Try changing the angle each turn (85 or 95 instead of 90)</li>
+  <li id="param-text__spiral__param-4">Try adding more <strong>move</strong> and <strong>turn</strong> blocks in the loop</li>
+  <li id="param-text__spiral__param-5">Try adding a repeat <strong>inside</strong> the loop</li>
+  <li id="param-text__spiral__param-6">Keep going! Add more <strong>move</strong>, <strong>turn</strong> and <strong>repeat</strong> blocks inside the loop</li>
+  <pre id="answer-text__spiral__answer-2" class="scratchblocks">
+when green flag clicked
+forever
+  move (100) steps
+  turn cw (90) degrees
+end
+  </pre>
+  <pre id="answer-text__spiral__answer-3" class="scratchblocks">
+when green flag clicked
+forever
+  move (100) steps
+  turn cw (85) degrees
+end
+  </pre>
+  <pre id="answer-text__spiral__answer-4" class="scratchblocks">
+when green flag clicked
+forever
+  move (100) steps
+  turn cw (85) degrees
+  move (30) steps
+  turn ccw (15) degrees
+end
+  </pre>
+  <pre id="answer-text__spiral__answer-5" class="scratchblocks">
+when green flag clicked
+forever
+  move (100) steps
+  turn cw (85) degrees
+  move (30) steps
+  turn ccw (15) degrees
+  repeat (15)
+    move (5) steps
+    turn cw (7) degrees
+  end
+end
+  </pre>
+  <pre id="answer-text__spiral__answer-6" class="scratchblocks">
+when green flag clicked
+forever
+  move (100) steps
+  turn cw (85) degrees
+  move (30) steps
+  turn ccw (15) degrees
+  repeat (15)
+    move (5) steps
+    turn cw (7) degrees
+  end
+  repeat (7)
+    move (10) steps
+    turn cw (4) degrees
+  end
+end
+  </pre>
+
+  <span id="question-text__character">Character Maker</span>
+  <li id="param-text__character__param">Make a project to select and combine different head/body/legs</li>
+  <span id="hint-text__character__hint-1">Should the different heads be the same sprite or multiple sprites?</span>
+  <span id="hint-text__character__hint-2">What about the body and leg parts?</span>
+  <span id="hint-text__character__hint-3">How can you switch between <strong>looks</strong> of the head/body/leg sprite?</span></span>
+  <span id="answer-text__character__answer-1">Add 1 Head sprite, 1 Body sprite, and 1 Legs sprite</span>
+  <span id="answer-text__character__answer-2">Add multiple costumes to each part of the character</span>
+  <pre id="answer-text__character__answer-3" class="scratchblocks">
+when this sprite clicked
+next costume
+  </pre>
+
+  <span id="question-text__painting">Painting</span>
+  <li id="param-text__painting__param">Make a project that lets you draw using the <strong>mouse</strong>, and lets you set the pen <strong>up</strong>/<strong>down</strong></li>
+  <pre id="answer-text__painting__answer" class="scratchblocks">
+when green flag clicked
+forever
+  go to (mouse-pointer v)
+end
+
+when [up arrow v] key pressed
+pen up
+
+when [down arrow v] key pressed
+pen down
+  </pre>
+</div>
