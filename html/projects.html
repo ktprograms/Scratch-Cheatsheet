@@ -1,123 +1,383 @@
-<div hidden>
-  <span id="question-text__racing">Racing game</span>
-  <li id="param-text__racing__param-1">Make a <strong>racing</strong> game, with two players (one can use the <strong>A</strong> key, and the other can use the <strong>L</strong> key)</li>
-  <li id="param-text__racing__param-2">Make sure the cars <strong>reset</strong> to the starting line when the game <strong>starts</strong></li>
-  <span id="hint-text__racing__hint-1">How do you <strong>reset</strong> the position?</span>
-  <span id="hint-text__racing__hint-2">Should both player’s cars be at the same place, or different places?</span>
-  <pre id="answer-text__racing__answer" class="scratchblocks">
-when green flag clicked
-go to x: (...) y: (...)
+<h1 id="mini-projects" class="my-3">Mini-projects</h1>
 
-when [a v] key pressed
-move (10) steps
+<div class="accordion">
+  <div class="accordion-item">
+    <div class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#racing">
+        <span data-show="racing"></span>
+      </button>
+    </div>
+    <div id="racing" class="accordion-collapse collapse">
+      <div class="accordion-body">
+        <ul>
+          <li data-show="racing__param-1" class="param__show"></li>
+          <li data-show="racing__param-2" class="param__show"></li>
+        </ul>
 
-when [l v] key pressed
-move (10) steps
-  </pre>
+        <div>
+          <strong>Hint 1:</strong> <span data-show="racing__hint-1" class="hint__show btn badge text-bg-secondary">Show</span>
+        </div>
+        <div>
+          <strong>Hint 2:</strong> <span data-show="racing__hint-2" class="hint__show btn badge text-bg-secondary">Show</span>
+        </div>
 
-  <span id="question-text__breathe">Breathing</span>
-  <li id="param-text__breathe__param-1">Make the sprite “breathe” (getting bigger and smaller)</li>
-  <li id="param-text__breathe__param-2">Size should stay between 95 and 105</li>
-  <span id="hint-text__breathe__hint-1">Increase the size until it is more than 105</span>
-  <span id="hint-text__breathe__hint-2">Next, decrease the size until it is less than 95</span>
-  <span id="hint-text__breathe__hint-3">Last, make the first 2 steps repeat (forever?)</span>
-  <pre id="answer-text__breathe__answer" class="scratchblocks">
-when green flag clicked
-forever
-  repeat until &lt;(size) &gt; (105)&gt;
-    change size by (1)
-  end
-  repeat until &lt;(size) &lt; (95)&gt;
-    change size by (-1)
-  end
-end
-  </pre>
+        <hr class="answer" hidden />
 
-  <span id="question-text__spiral">Spiral</span>
-  <li id="param-text__spiral__param-1">Using the Pen extension, draw a square</li>
-  <li id="param-text__spiral__param-2">Do it <strong>forever</strong></li>
-  <li id="param-text__spiral__param-3">Try changing the angle each turn (85 or 95 instead of 90)</li>
-  <li id="param-text__spiral__param-4">Try adding more <strong>move</strong> and <strong>turn</strong> blocks in the loop</li>
-  <li id="param-text__spiral__param-5">Try adding a repeat <strong>inside</strong> the loop</li>
-  <li id="param-text__spiral__param-6">Keep going! Add more <strong>move</strong>, <strong>turn</strong> and <strong>repeat</strong> blocks inside the loop</li>
-  <pre id="answer-text__spiral__answer-2" class="scratchblocks">
-when green flag clicked
-forever
-  move (100) steps
-  turn cw (90) degrees
-end
-  </pre>
-  <pre id="answer-text__spiral__answer-3" class="scratchblocks">
-when green flag clicked
-forever
-  move (100) steps
-  turn cw (85) degrees
-end
-  </pre>
-  <pre id="answer-text__spiral__answer-4" class="scratchblocks">
-when green flag clicked
-forever
-  move (100) steps
-  turn cw (85) degrees
-  move (30) steps
-  turn ccw (15) degrees
-end
-  </pre>
-  <pre id="answer-text__spiral__answer-5" class="scratchblocks">
-when green flag clicked
-forever
-  move (100) steps
-  turn cw (85) degrees
-  move (30) steps
-  turn ccw (15) degrees
-  repeat (15)
-    move (5) steps
-    turn cw (7) degrees
-  end
-end
-  </pre>
-  <pre id="answer-text__spiral__answer-6" class="scratchblocks">
-when green flag clicked
-forever
-  move (100) steps
-  turn cw (85) degrees
-  move (30) steps
-  turn ccw (15) degrees
-  repeat (15)
-    move (5) steps
-    turn cw (7) degrees
-  end
-  repeat (7)
-    move (10) steps
-    turn cw (4) degrees
-  end
-end
-  </pre>
+        <div class="answer" hidden>
+          <pre data-show="racing__answer"></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <div class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#breathe">
+        <span data-show="breathe"></span>
+      </button>
+    </div>
+    <div id="breathe" class="accordion-collapse collapse">
+      <div class="accordion-body">
+        <ul>
+          <li data-show="breathe__param-1" class="param__show"></li>
+          <li data-show="breathe__param-2" class="param__show"></li>
+        </ul>
 
-  <span id="question-text__character">Character Maker</span>
-  <li id="param-text__character__param">Make a project to select and combine different head/body/legs</li>
-  <span id="hint-text__character__hint-1">Should the different heads be the same sprite or multiple sprites?</span>
-  <span id="hint-text__character__hint-2">What about the body and leg parts?</span>
-  <span id="hint-text__character__hint-3">How can you switch between <strong>looks</strong> of the head/body/leg sprite?</span></span>
-  <span id="answer-text__character__answer-1">Add 1 Head sprite, 1 Body sprite, and 1 Legs sprite</span>
-  <span id="answer-text__character__answer-2">Add multiple costumes to each part of the character</span>
-  <pre id="answer-text__character__answer-3" class="scratchblocks">
-when this sprite clicked
-next costume
-  </pre>
+        <div>
+          <strong>Hint 1:</strong> <span data-show="breathe__hint-1" class="hint__show btn badge text-bg-secondary">Show</span>
+        </div>
+        <div>
+          <strong>Hint 2:</strong> <span data-show="breathe__hint-2" class="hint__show btn badge text-bg-secondary">Show</span>
+        </div>
+        <div>
+          <strong>Hint 3:</strong> <span data-show="breathe__hint-3" class="hint__show btn badge text-bg-secondary">Show</span>
+        </div>
 
-  <span id="question-text__painting">Painting</span>
-  <li id="param-text__painting__param">Make a project that lets you draw using the <strong>mouse</strong>, and lets you set the pen <strong>up</strong>/<strong>down</strong></li>
-  <pre id="answer-text__painting__answer" class="scratchblocks">
-when green flag clicked
-forever
-  go to (mouse-pointer v)
-end
+        <hr class="answer" hidden />
 
-when [up arrow v] key pressed
-pen up
+        <div class="answer" hidden>
+          <pre data-show="breathe__answer"></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <div class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#spiral">
+        <span data-show="spiral"></span>
+      </button>
+    </div>
+    <div id="spiral" class="accordion-collapse collapse">
+      <div class="accordion-body">
+        <ol>
+          <li data-show="spiral__param-1" class="param__show"></li>
+          <li data-show="spiral__param-2" class="param__show"></li>
+          <li data-show="spiral__param-3" class="param__show"></li>
+          <li data-show="spiral__param-4" class="param__show"></li>
+          <li data-show="spiral__param-5" class="param__show"></li>
+          <li data-show="spiral__param-6" class="param__show"></li>
+        </ol>
 
-when [down arrow v] key pressed
-pen down
-  </pre>
+        <hr class="answer" hidden />
+
+        <div class="answer" hidden>
+          <strong>Step 2:</strong>
+          <pre data-show="spiral__answer-2"></pre>
+        </div>
+        <div class="answer" hidden>
+          <strong>Step 3:</strong>
+          <pre data-show="spiral__answer-3"></pre>
+        </div>
+        <div class="answer" hidden>
+          <strong>Step 4:</strong>
+          <pre data-show="spiral__answer-4"></pre>
+        </div>
+        <div class="answer" hidden>
+          <strong>Step 5:</strong>
+          <pre data-show="spiral__answer-5"></pre>
+        </div>
+        <div class="answer" hidden>
+          <strong>Step 6:</strong>
+          <pre data-show="spiral__answer-6"></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <div class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#character">
+        <span data-show="character"></span>
+      </button>
+    </div>
+    <div id="character" class="accordion-collapse collapse">
+      <div class="accordion-body">
+        <ul>
+          <li data-show="character__param" class="param__show"></li>
+        </ul>
+
+        <div>
+          <strong>Hint 1:</strong> <span data-show="character__hint-1" class="hint__show btn badge text-bg-secondary">Show</span>
+        </div>
+        <div>
+          <strong>Hint 2:</strong> <span data-show="character__hint-2" class="hint__show btn badge text-bg-secondary">Show</span>
+        </div>
+
+        <hr class="answer" hidden />
+
+        <div class="answer" hidden>
+          <strong>Answer 1:</strong> <span data-show="character__answer-1"></span>
+        </div>
+        <div class="answer" hidden>
+          <strong>Answer 2:</strong> <span data-show="character__answer-2"></span>
+        </div>
+
+        <div class="answer" hidden>
+          <strong>Answer (code):</strong>
+          <pre data-show="character__answer-3"></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <div class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#painting">
+        <span data-show="painting"></span>
+      </button>
+    </div>
+    <div id="painting" class="accordion-collapse collapse">
+      <div class="accordion-body">
+        <ul>
+          <li data-show="painting__param" class="param__show"></li>
+        </ul>
+
+        <hr class="answer" hidden />
+
+        <div class="answer" hidden>
+          <pre data-show="painting__answer"></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr />
+
+<h1 id="mini-projects-2" class="my-3">Mini-projects #2</h1>
+
+<div class="accordion">
+  <div class="accordion-item">
+    <div class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#loudness">
+        <span data-show="loudness"></span>
+      </button>
+    </div>
+    <div id="loudness" class="accordion-collapse collapse">
+      <div class="accordion-body">
+        <ul>
+          <li data-show="loudness__param-1" class="param__show"></li>
+          <li data-show="loudness__param-2" class="param__show"></li>
+        </ul>
+
+        <div>
+          <strong>Hint 1:</strong> <span data-show="loudness__hint-1" class="hint__show btn badge text-bg-secondary">Show</span>
+        </div>
+        <div>
+          <strong>Hint 2:</strong> <span data-show="loudness__hint-2" class="hint__show btn badge text-bg-secondary">Show</span>
+        </div>
+        <div>
+          <strong>Hint 3:</strong> <span data-show="loudness__hint-3" class="hint__show btn badge text-bg-secondary">Show</span>
+        </div>
+
+        <hr class="answer" hidden />
+
+        <div class="answer" hidden>
+          <pre data-show="loudness__answer"></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <div class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#dress">
+        <span data-show="dress"></span>
+      </button>
+    </div>
+    <div id="dress" class="accordion-collapse collapse">
+      <div class="accordion-body">
+        <ul>
+          <li data-show="dress__param-1" class="param__show"></li>
+          <li data-show="dress__param-2" class="param__show"></li>
+          <li data-show="dress__param-3" class="param__show"></li>
+        </ul>
+
+        <div>
+          <strong>Hint 1:</strong> <span data-show="dress__hint-1" class="hint__show btn badge text-bg-secondary">Show</span>
+        </div>
+        <div>
+          <strong>Hint 2:</strong> <span data-show="dress__hint-2" class="hint__show btn badge text-bg-secondary">Show</span>
+        </div>
+        <div>
+          <strong>Hint 3:</strong> <span data-show="dress__hint-3" class="hint__show btn badge text-bg-secondary">Show</span>
+        </div>
+        <div>
+          <strong>Hint 4:</strong> <span data-show="dress__hint-4" class="hint__show btn badge text-bg-secondary">Show</span>
+        </div>
+
+        <hr class="answer" hidden />
+
+        <div class="answer" hidden>
+          <pre data-show="dress__answer"></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <div class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#story">
+        <span data-show="story"></span>
+      </button>
+    </div>
+    <div id="story" class="accordion-collapse collapse">
+      <div class="accordion-body">
+        <ul>
+          <li data-show="story__param-1" class="param__show"></li>
+          <li data-show="story__param-2" class="param__show"></li>
+          <li data-show="story__param-3" class="param__show"></li>
+          <li data-show="story__param-4" class="param__show"></li>
+        </ul>
+
+        <div>
+          <strong>Hint 1:</strong> <span data-show="story__hint-1" class="hint__show btn badge text-bg-secondary">Show</span>
+        </div>
+        <div>
+          <strong>Hint 2:</strong> <span data-show="story__hint-2" class="hint__show btn badge text-bg-secondary">Show</span>
+        </div>
+        <div>
+          <strong>Hint 3:</strong> <span data-show="story__hint-3" class="hint__show btn badge text-bg-secondary">Show</span>
+        </div>
+
+        <hr class="answer" hidden />
+
+        <div class="answer" hidden>
+          <pre data-show="story__answer"></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <div class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#rain">
+        <span data-show="rain"></span>
+      </button>
+    </div>
+    <div id="rain" class="accordion-collapse collapse">
+      <div class="accordion-body">
+        <ul>
+          <li data-show="rain__param" class="param__show"></li>
+        </ul>
+
+        <div>
+          <strong>Hint 1:</strong> <span data-show="rain__hint-1" class="hint__show btn badge text-bg-secondary">Show</span>
+        </div>
+        <div>
+          <strong>Hint 2:</strong> <span data-show="rain__hint-2" class="hint__show btn badge text-bg-secondary">Show</span>
+        </div>
+        <div>
+          <strong>Hint 3:</strong> <span data-show="rain__hint-3" class="hint__show btn badge text-bg-secondary">Show</span>
+        </div>
+        <div>
+          <strong>Hint 4:</strong> <span data-show="rain__hint-4" class="hint__show btn badge text-bg-secondary">Show</span>
+        </div>
+
+        <hr class="answer" hidden />
+
+        <div class="answer" hidden>
+          <pre data-show="rain__answer"></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <div class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#lift">
+        <span data-show="lift"></span>
+      </button>
+    </div>
+    <div id="lift" class="accordion-collapse collapse">
+      <div class="accordion-body">
+        <ul>
+          <li data-show="lift__param-1" class="param__show"></li>
+          <li data-show="lift__param-2" class="param__show"></li>
+          <li data-show="lift__param-3" class="param__show"></li>
+          <li data-show="lift__param-4" class="param__show"></li>
+        </ul>
+
+        <div>
+          <strong>Hint:</strong> <span data-show="lift__hint" class="hint__show btn badge text-bg-secondary">Show</span>
+        </div>
+
+        <hr class="answer" hidden />
+
+        <div class="answer" hidden>
+          <strong>Go to top Sprite:</strong>
+          <pre data-show="lift__answer-1"></pre>
+        </div>
+        <div class="answer" hidden>
+          <strong>Go up Sprite:</strong>
+          <pre data-show="lift__answer-2"></pre>
+        </div>
+        <div class="answer" hidden>
+          <strong>Open doors Sprite:</strong>
+          <pre data-show="lift__answer-3"></pre>
+        </div>
+        <div class="answer" hidden>
+          <strong>Lift Sprite:</strong>
+          <pre data-show="lift__answer-4"></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <div class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#clicker">
+        <span data-show="clicker"></span>
+      </button>
+    </div>
+    <div id="clicker" class="accordion-collapse collapse">
+      <div class="accordion-body">
+        <ul>
+          <li data-show="clicker__param-1" class="param__show"></li>
+          <li data-show="clicker__param-2" class="param__show"></li>
+          <li data-show="clicker__param-3" class="param__show"></li>
+        </ul>
+
+        <div>
+          <strong>Hint 1:</strong> <span data-show="clicker__hint-1" class="hint__show btn badge text-bg-secondary">Show</span>
+        </div>
+        <div>
+          <strong>Hint 2:</strong> <span data-show="clicker__hint-2" class="hint__show btn badge text-bg-secondary">Show</span>
+        </div>
+        <div>
+          <strong>Hint 3:</strong> <span data-show="clicker__hint-3" class="hint__show btn badge text-bg-secondary">Show</span>
+        </div>
+
+        <hr class="answer" hidden />
+
+        <div class="answer" hidden>
+          <strong>Sprite to Click</strong>
+          <pre data-show="clicker__answer-1"></pre>
+        </div>
+        <div class="answer" hidden>
+          <strong>Powerup Sprite</strong>
+          <pre data-show="clicker__answer-2"></pre>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

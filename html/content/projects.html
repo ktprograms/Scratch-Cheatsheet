@@ -1,0 +1,243 @@
+<div hidden>
+  <span id="question-text__racing">Racing game</span>
+  <li id="param-text__racing__param-1">Make a <strong>racing</strong> game, with two players (one can use the <strong>A</strong> key, and the other can use the <strong>L</strong> key)</li>
+  <li id="param-text__racing__param-2">Make sure the cars <strong>reset</strong> to the starting line when the game <strong>starts</strong></li>
+  <span id="hint-text__racing__hint-1">How do you <strong>reset</strong> the position?</span>
+  <span id="hint-text__racing__hint-2">Should both player’s cars be at the same place, or different places?</span>
+  <pre id="answer-text__racing__answer" class="scratchblocks">
+when green flag clicked
+go to x: (...) y: (...)
+
+when [a v] key pressed
+move (10) steps
+
+when [l v] key pressed
+move (10) steps
+  </pre>
+
+  <span id="question-text__breathe">Breathing</span>
+  <li id="param-text__breathe__param-1">Make the sprite “breathe” (getting bigger and smaller)</li>
+  <li id="param-text__breathe__param-2">Size should stay between 95 and 105</li>
+  <span id="hint-text__breathe__hint-1">Increase the size until it is more than 105</span>
+  <span id="hint-text__breathe__hint-2">Next, decrease the size until it is less than 95</span>
+  <span id="hint-text__breathe__hint-3">Last, make the first 2 steps repeat (forever?)</span>
+  <pre id="answer-text__breathe__answer" class="scratchblocks">
+when green flag clicked
+forever
+  repeat until &lt;(size) &gt; (105)&gt;
+    change size by (1)
+  end
+  repeat until &lt;(size) &lt; (95)&gt;
+    change size by (-1)
+  end
+end
+  </pre>
+
+  <span id="question-text__spiral">Spiral</span>
+  <li id="param-text__spiral__param-1">Using the Pen extension, draw a square</li>
+  <li id="param-text__spiral__param-2">Do it <strong>forever</strong></li>
+  <li id="param-text__spiral__param-3">Try changing the angle each turn (85 or 95 instead of 90)</li>
+  <li id="param-text__spiral__param-4">Try adding more <strong>move</strong> and <strong>turn</strong> blocks in the loop</li>
+  <li id="param-text__spiral__param-5">Try adding a repeat <strong>inside</strong> the loop</li>
+  <li id="param-text__spiral__param-6">Keep going! Add more <strong>move</strong>, <strong>turn</strong> and <strong>repeat</strong> blocks inside the loop</li>
+  <pre id="answer-text__spiral__answer-2" class="scratchblocks">
+when green flag clicked
+forever
+  move (100) steps
+  turn cw (90) degrees
+end
+  </pre>
+  <pre id="answer-text__spiral__answer-3" class="scratchblocks">
+when green flag clicked
+forever
+  move (100) steps
+  turn cw (85) degrees
+end
+  </pre>
+  <pre id="answer-text__spiral__answer-4" class="scratchblocks">
+when green flag clicked
+forever
+  move (100) steps
+  turn cw (85) degrees
+  move (30) steps
+  turn ccw (15) degrees
+end
+  </pre>
+  <pre id="answer-text__spiral__answer-5" class="scratchblocks">
+when green flag clicked
+forever
+  move (100) steps
+  turn cw (85) degrees
+  move (30) steps
+  turn ccw (15) degrees
+  repeat (15)
+    move (5) steps
+    turn cw (7) degrees
+  end
+end
+  </pre>
+  <pre id="answer-text__spiral__answer-6" class="scratchblocks">
+when green flag clicked
+forever
+  move (100) steps
+  turn cw (85) degrees
+  move (30) steps
+  turn ccw (15) degrees
+  repeat (15)
+    move (5) steps
+    turn cw (7) degrees
+  end
+  repeat (7)
+    move (10) steps
+    turn cw (4) degrees
+  end
+end
+  </pre>
+
+  <span id="question-text__character">Character Maker</span>
+  <li id="param-text__character__param">Make a project to select and combine different head/body/legs</li>
+  <span id="hint-text__character__hint-1">Should the different heads be the same sprite or multiple sprites?</span>
+  <span id="hint-text__character__hint-2">What about the body and leg parts?</span>
+  <span id="hint-text__character__hint-3">How can you switch between <strong>looks</strong> of the head/body/leg sprite?</span></span>
+  <span id="answer-text__character__answer-1">Add 1 Head sprite, 1 Body sprite, and 1 Legs sprite</span>
+  <span id="answer-text__character__answer-2">Add multiple costumes to each part of the character</span>
+  <pre id="answer-text__character__answer-3" class="scratchblocks">
+when this sprite clicked
+next costume
+  </pre>
+
+  <span id="question-text__painting">Painting</span>
+  <li id="param-text__painting__param">Make a project that lets you draw using the <strong>mouse</strong>, and lets you set the pen <strong>up</strong>/<strong>down</strong></li>
+  <pre id="answer-text__painting__answer" class="scratchblocks">
+when green flag clicked
+forever
+  go to (mouse-pointer v)
+end
+
+when [up arrow v] key pressed
+pen up
+
+when [down arrow v] key pressed
+pen down
+  </pre>
+
+  <span id="question-text__loudness">Loudness Meter</span>
+  <li id="param-text__loudness__param-1">Make a sprite that moves <strong>up</strong>/<strong>down</strong> based on how <strong>loud</strong> it is</li>
+  <li id="param-text__loudness__param-2">Have a background that the sprite moves from "quiet" to "loud" (bottom = quiet, top = loud)</li>
+  <span id="hint-text__loudness__hint-1">Is there a block to see the current <strong>loudness</strong>?</span>
+  <span id="hint-text__loudness__hint-2">Can you use the <strong>loudness</strong> block as part of the <strong>change position</strong> block?</span>
+  <span id="hint-text__loudness__hint-3">If it's not moving enough, can you <strong>multiply</strong> the position?</span>
+  <pre id="answer-text__loudness__answer" class="scratchblocks">
+when green flag clicked
+go to [front v] layer
+forever
+  set y to ((10) * (loudness))
+end
+  </pre>
+
+  <span id="question-text__dress">Dress Up</span>
+  <li id="param-text__dress__param-1">Make a project that lets you put "clothes" on a character</li>
+  <li id="param-text__dress__param-2">Have at least 2 each of shirts, pants, and accessiories (for example, hat or sunglasses)</li>
+  <li id="param-text__dress__param-3">When you click on the clothes, it will move onto the character <strong>at the correct places</strong></li>
+  <span id="hint-text__dress__hint-1">Where should each piece of clothing start?</span>
+  <span id="hint-text__dress__hint-2">Where should it go?</span>
+  <span id="hint-text__dress__hint-3">How do you make it go from one place to another?</span>
+  <span id="hint-text__dress__hint-4">How can you make code run <strong>when</strong> you click something?</span>
+  <pre id="answer-text__dress__answer" class="scratchblocks">
+when green flag clicked
+go to x: (...) y: (...)
+
+when this sprite clicked
+glide (...) secs to x: (...) y: (...)
+  </pre>
+
+  <span id="question-text__story">Storytime</span>
+  <li id="param-text__story__param-1">This project will ask the player for certain words, then put it together into a story</li>
+  <li id="param-text__story__param-2">For example, it can ask for a <strong>name</strong>, an <strong>animal</strong> and a <strong>food</strong></li>
+  <li id="param-text__story__param-3">Then it will combine it into the sentence “<em>Name</em> fed the <em>animal</em> with <em>food</em>”</li>
+  <li id="param-text__story__param-4">Assuming the name is “John”, the animal is “cat” and the food is “pizza”, the sentence would become “<em>John</em> fed the <em>cat</em> with <em>pizza</em>”</li>
+  <span id="hint-text__story__hint-1">How can you <strong>ask</strong> something using Scratch?</span>
+  <span id="hint-text__story__hint-2">How do you get the <strong>answer</strong>?</span>
+  <span id="hint-text__story__hint-3">Can you <strong>join</strong> sentences/words together?</span>
+  <pre id="answer-text__story__answer" class="scratchblocks">
+when green flag clicked
+ask [Give a name] and wait
+set [name v] to (answer)
+ask [Give an animal] and wait
+set [animal v] to (answer)
+ask [Give a food] and wait
+set [food v] to (answer)
+say [Your story:] for (2) seconds
+say (join (name) (join [ fed the ] (join (animal) (join [ with ] (food)))))
+  </pre>
+
+  <span id="question-text__rain">Rain</span>
+  <li id="param-text__rain__param">Make <strong>many</strong> raindrops fall down the screen</li>
+  <span id="hint-text__rain__hint-1">How do you get many things from one sprite?</span>
+  <span id="hint-text__rain__hint-2">Should the <strong>original</strong> be falling down or the <strong>copies</strong>?</span>
+  <span id="hint-text__rain__hint-3">Should it go down in a straight line?</span>
+  <span id="hint-text__rain__hint-4">To be in a straight line downwards, should the <strong>x</strong> position or the <strong>y</strong> position stay the <strong>same</strong>?</span>
+  <pre id="answer-text__rain__answer" class="scratchblocks">
+when green flag clicked
+forever
+  wait (0.5) seconds
+  create clone of [myself v]
+end
+
+when I start as a clone
+go to (random position v)
+set y to (250)
+glide (4) secs to x: (x position) y: (-250)
+  </pre>
+
+  <span id="question-text__lift">Elevator (Lift)</span>
+  <li id="param-text__lift__param-1">Make a project that shows a tall building with a lift</li>
+  <li id="param-text__lift__param-2">Add buttons to make the lift go to the top and bottom</li>
+  <li id="param-text__lift__param-3">Add buttons to go up/down by <strong>1 floor</strong></li>
+  <li id="param-text__lift__param-4">Add buttons to open and close the <strong>lift's</strong> doors</li>
+  <span id="hint-text__lift__hint">Should the <strong>opened</strong> and <strong>closed</strong> lift images be a separate sprite or the same?</span>
+  <pre id="answer-text__lift__answer-1" class="scratchblocks">
+when this sprite clicked
+broadcast [go to top v]
+  </pre>
+  <pre id="answer-text__lift__answer-2" class="scratchblocks">
+when this sprite clicked
+broadcast [go up v]
+  </pre>
+  <pre id="answer-text__lift__answer-3" class="scratchblocks">
+when this sprite clicked
+broadcast [open v]
+  </pre>
+  <pre id="answer-text__lift__answer-4" class="scratchblocks">
+when I receive [go to top v]
+go to x: (...) y: (...)
+
+when I receive [go up v]
+change y by (...)
+
+when I receive [open v]
+switch costume to (lift-open v)
+  </pre>
+  </pre>
+
+  <span id="question-text__clicker">Clicker Game</span>
+  <li id="param-text__clicker__param-1">Make a game that counts how many times you <strong>click</strong> a sprite</li>
+  <li id="param-text__clicker__param-2">Let the player buy "powerups" that increases the score more each time the player clicks</li>
+  <li id="param-text__clicker__param-3">For example, a powerup could "cost" (subtract) 25 clicks, but give you 5 clicks each time instead of 1</li>
+  <span id="hint-text__clicker__hint-1">How can you make code run <strong>when</strong> you click something?</span>
+  <span id="hint-text__clicker__hint-2">How can you keep track of the number of times the sprite is clicked?</span>
+  <span id="hint-text__clicker__hint-3">Can you <strong>change</strong> the click number by more than 1?</span>
+  <pre id="answer-text__clicker__answer-1" class="scratchblocks">
+when this sprite clicked
+change [click v] by (powerup)
+  </pre>
+  <pre id="answer-text__clicker__answer-2" class="scratchblocks">
+when green flag clicked
+set [powerup v] to (1)
+
+when this sprite clicked
+change [click v] by (-25)
+set [powerup v] to (5)
+  </pre>
+  </pre>
+</div>
