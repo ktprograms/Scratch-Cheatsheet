@@ -7,7 +7,7 @@ import url from 'node:url';
 import { transform } from './vite-plugin-include-html';
 
 export default defineConfig({
-    base: 'vigilant-succotash',
+    base: '',
     plugins: [
         {
             name: 'vite-plugin-include-html',
