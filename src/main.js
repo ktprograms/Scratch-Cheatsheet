@@ -2,10 +2,23 @@
 
 const CONFIG_DEBUG = import.meta.env.DEV;
 
-const CONFIG_GITHUB_AUTH = '<REDACTED>';
+// FIXME: Provide these,
+// or leave blank if you wish to disable logging
+//
+// NOTE: Follow these steps to generate the auth token:
+// https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token
+//
+// WARN: For maximum security, when creating the token, choose:
+// 1. Only select repositories
+//    - ONLY the repository you're using to track hint usage
+// 2. Repository permissions as such:
+//    - Issues: Read and write
+//    - Metadata: Read-only
+// 3. NO (ZERO) Account permissions
+const CONFIG_GITHUB_AUTH_TOKEN = '';
 const CONFIG_GITHUB_REPO = {
-    owner: 'ktprograms',
-    repo: 'STEP2024-Scratch-Cheatsheet-Usage',
+    owner: '',
+    repo: '',
 };
 
 const CONFIG_SCRATCHBLOCKS_OPTIONS = {
@@ -13,7 +26,17 @@ const CONFIG_SCRATCHBLOCKS_OPTIONS = {
     scale: 0.75,
 };
 
-const CONFIG_VALID_EMAIL = /^(?:[a-zA-Z0-9.])+@edu\.dignityforchildren\.org$/;
+// NOTE: Here is where you specify Teacher/Student "Accounts"
+// These are not real accounts, they just provide some logging in the
+// GitHub repo's comments, for you to track the hints used by students.
+//
+// NOTE: CONFIG_PRIVILEGED_EMAIL is the Teacher regex.
+//
+// NOTE: CONFIG_UNPRIVILEGED_EMAIL is the Student regex.
+// WARN: Most likely, in 2025, the "24" part of the regex will
+// have to be replaced/kept in addition to a "25" match.
+// Same for years beyond.
+const CONFIG_PRIVILEGED_EMAIL = /^(?:[a-zA-Z0-9.])+@edu\.dignityforchildren\.org$/;
 const CONFIG_UNPRIVILEGED_EMAIL = /^dc(?:24)?(?:[a-zA-Z0-9.])+@edu\.dignityforchildren\.org$/;
 
 //- MARK: scratchblocks
@@ -54,7 +77,7 @@ renderScratchblocks();
 import { Octokit } from 'octokit';
 
 const octokit = new Octokit({
-    auth: CONFIG_GITHUB_AUTH,
+    auth: CONFIG_GITHUB_AUTH_TOKEN,
 });
 
 /**
@@ -158,8 +181,8 @@ document.querySelectorAll('.param__show').forEach(function (paramEl) {
 
 //- MARK: Users
 
-function isEmailValid(email) {
-    return CONFIG_VALID_EMAIL.test(email);
+function isEmailPrivileged(email) {
+    return CONFIG_PRIVILEGED_EMAIL.test(email);
 }
 function isEmailUnprivileged(email) {
     return CONFIG_UNPRIVILEGED_EMAIL.test(email);
@@ -170,7 +193,7 @@ const email = urlParams.get('email');
 
 logKeyShown('signin', email);
 
-if (!isEmailValid(email)) {
+if (!isEmailPrivileged(email)) {
     document.querySelector('.nav__signinout').outerHTML = '<button class="nav__signinout btn btn-primary" data-bs-target=".signin" data-bs-toggle="modal">Sign In</button>';
 } else {
     if (isEmailUnprivileged(email)) {
@@ -210,7 +233,7 @@ document.addEventListener('click', function (event) {
     if (!event.target.matches('.hint__show')) {
         return;
     }
-    if (!isEmailValid(email)) {
+    if (!isEmailPrivileged(email)) {
         document.querySelector('.nav__signinout').click();
         return;
     }
