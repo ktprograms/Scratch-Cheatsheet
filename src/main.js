@@ -76,9 +76,11 @@ renderScratchblocks();
 
 import { Octokit } from 'octokit';
 
-const octokit = new Octokit({
+const HAS_GITHUB = !!CONFIG_GITHUB_AUTH_TOKEN && !!CONFIG_GITHUB_REPO.owner && !!CONFIG_GITHUB_REPO.repo
+
+const octokit = HAS_GITHUB ? new Octokit({
     auth: CONFIG_GITHUB_AUTH_TOKEN,
-});
+}) : console.info('NOTICE: GitHub configuration not provided, no logging will be performed');
 
 /**
  * @param {string} user
@@ -145,7 +147,7 @@ async function createComment(user, comment) {
 async function logKeyShown(user, key) {
     if (CONFIG_DEBUG) {
         console.debug('SHOWN:', user, key);
-    } else {
+    } else if (HAS_GITHUB) {
         await createComment(user, key);
     }
 }
